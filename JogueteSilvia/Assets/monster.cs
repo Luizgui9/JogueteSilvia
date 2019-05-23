@@ -5,13 +5,13 @@ using UnityEngine.AI;
 
 public class monster : MonoBehaviour
 {
-    public Transform goal;
-    public var victim;
-    // Start is called before the first frame update
+    public Transform victim;
+    public NavMeshAgent agent;
+
     void Start()
     {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.destination = goal.position;
+        agent = GetComponent<NavMeshAgent>();
+        agent.destination = victim.position;
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class monster : MonoBehaviour
     {
         if (victim)
         {
-            navComponent.SetDestination(targetPoint.postion);
+            agent.SetDestination(victim.position);
         }
     }
 }
