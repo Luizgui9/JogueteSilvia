@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -64,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
         if (outro.gameObject.tag == "monster")
         {
             Destroy(gameObject);
+            SceneManager.LoadScene(2);
         }
     }
 }
