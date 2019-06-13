@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate(-speed, 0, 0);
             animator.SetInteger("move", 1);
-            transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector3(-1, 1, 1);
         }
         else if (Input.GetKeyUp(KeyCode.A))
         {
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate(speed, 0, 0);
             animator.SetInteger("move", 1);
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector3(1, 1, 1);
         }
         else if (Input.GetKeyUp(KeyCode.D))
         {
