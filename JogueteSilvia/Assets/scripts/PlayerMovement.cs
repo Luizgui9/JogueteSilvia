@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Animator animator;
+    public Animator gateAnim;
     public float speed;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,38 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        if(PauseScript.GameIsPaused){
+            transform.Translate( 0, 0, 0);
+        }
+        else{
+            Movimentacao();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D outro)
+    {
+        if (outro.gameObject.tag == "monster")
+        {
+            //Destroy(gameObject);
+            //SceneManager.LoadScene(2);
+        }
+    }
+
+    //Este onTrigger é uma tentativa de fazer a porta se abrir quando o player se aproxima
+    public void OnTriggerEnter2D(Collider2D gateAction){
+        if(gateAction.gameObject.tag == "Gate"){
+          gateAnim.SetInteger("gate", 1);
+          Debug.Log("------------------------ENTROU");
+        }
+        if(gateAnim){
+            gateAnim.SetInteger("gate", 2);
+        }
+        
+        
+    }
+
+    private void Movimentacao(){
         if (Input.GetKey(KeyCode.S))
         {
             transform.Translate(0, -speed, 0);
@@ -57,15 +90,6 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.D))
         {
             animator.SetInteger("move", 0);
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D outro)
-    {
-        if (outro.gameObject.tag == "monster")
-        {
-            Destroy(gameObject);
-            SceneManager.LoadScene(2);
         }
     }
 }

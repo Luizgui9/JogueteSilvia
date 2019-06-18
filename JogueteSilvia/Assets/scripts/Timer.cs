@@ -10,8 +10,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        startTime = Time.time;
-        PlayerPrefs.GetFloat("tempo");
+        startTime = Time.time;    
     }
 
     // Update is called once per frame
@@ -22,7 +21,6 @@ public class Timer : MonoBehaviour
         string minutes = ((int) t / 60).ToString();
         string seconds = (t % 60).ToString("f2");
 
-        timerText.text = minutes + ":" + seconds;
-        PlayerPrefs.SetFloat("tempo", t);
+        timerText.text = minutes + ":" + seconds;        
     }
 }

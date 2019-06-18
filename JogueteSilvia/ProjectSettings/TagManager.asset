@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - monster
+  - Gate
+  - GameMaster
+  - elfo
+  - orc
+  - vampira
+  - hudelfo
+  - hudvampira
+  - hudorc
   layers:
   - Default
   - TransparentFX

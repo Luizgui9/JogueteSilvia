@@ -17,4 +17,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ranking.unity
     guid: 3fd33559a76fd0646b327322007de9e3
+  - enabled: 1
+    path: Assets/Scenes/CriaConta.unity
+    guid: 375751426d5669d48acee267a184ae9e
+  - enabled: 1
+    path: Assets/Scenes/Login.unity
+    guid: 23a3d07f1c4818c4895b288c2264d1cd
+  - enabled: 1
+    path: Assets/Scenes/ComoJogar.unity
+    guid: 07648763fccc9d04595d5853839962bb
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: 4a9775697e10c8d40b962b53af1a9af8
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: e2b792496c76ec44a95964cd4df264c9
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/NovoUsuario.unity
+    guid: a8746c6a5c56db348a4dabf03ad64a57
   m_configObjects: {}
