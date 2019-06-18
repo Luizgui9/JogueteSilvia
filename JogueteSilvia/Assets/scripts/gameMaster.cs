@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class gameMaster : MonoBehaviour
 {
@@ -11,14 +12,19 @@ public class gameMaster : MonoBehaviour
 
     public int pontos;
 
+    public Text melhorTempoText;
+
     public Text pontosText;
 
     public Text InputText;
 
     public Text timerText;
 
+    private bool p1, p2, p3;
+
     private float startTime;
-    public string tempo;
+    public float bestimes = 1000.00f;
+    public float tempo;
     CultureInfo ci = new CultureInfo("en-us");
 
     void Start()
@@ -30,25 +36,30 @@ public class gameMaster : MonoBehaviour
             {
                 PlayerPrefs.DeleteKey("Pontos");
                 PlayerPrefs.DeleteKey("Tempo");
+                PlayerPrefs.DeleteKey("Melhor tempo");
                 pontos = 0;
-                tempo = "";
+                tempo = 0.0f;
+                bestimes = 0.0f;
             }
             else
             {
                 pontos = PlayerPrefs.GetInt("Pontos");
-                tempo = PlayerPrefs.GetString("Tempo");
+                tempo = PlayerPrefs.GetFloat("Tempo");
+                bestimes = PlayerPrefs.GetFloat("Melhor tempo");
             }
 
             if (SceneManager.GetActiveScene().buildIndex == 2)
             {
-                timerText.text = tempo;
-                pontosText.text = pontos.ToString();
+                pontosText.text = PlayerPrefs.GetInt("Pontos").ToString();
+                timerText.text = PlayerPrefs.GetFloat("Tempo").ToString("f2");
+                melhorTempoText.text = PlayerPrefs.GetFloat("Melhor tempo").ToString("f2");
             }
         }
         else
         {
-            timerText.text = " ";
             pontosText.text = " ";
+            timerText.text = " ";
+            melhorTempoText.text = " ";
         }
     }
 
@@ -61,9 +72,9 @@ public class gameMaster : MonoBehaviour
             string minutes = ((int)t / 60).ToString();
             string seconds = (t % 60).ToString("f2", ci);
 
-            tempo = minutes + ":" + seconds;
-
-            timerText.text = tempo;
+            tempo = t;
+            timerText.text = minutes + ":" + seconds;
         }
     }
+
 }
