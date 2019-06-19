@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IrInstrucoes : MonoBehaviour
 {
+
     public void buttonIrInstrucoes(){
         UnityEngine.SceneManagement.SceneManager.LoadScene("ComoJogar");
     }

@@ -10,11 +10,13 @@ public class Alavanca : MonoBehaviour
     public GameObject JaulaFundo;
     private GameObject Personagem;
     public string nomePersonagem;
+    public AudioSource audio;
 
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<gameMaster>();
         Personagem = GameObject.FindGameObjectWithTag(nomePersonagem);
+        audio = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -27,7 +29,7 @@ public class Alavanca : MonoBehaviour
                 Destroy(Jaula);
                 Destroy(JaulaFundo);
                 Personagem.GetComponent<Cela>().aberta = true;
-                //som de cela abrindo
+                audio.Play();
                 gm.InputText.text = ("Procure pela cela aberta");
             }
         }
