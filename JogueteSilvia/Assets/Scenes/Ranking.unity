@@ -149,12 +149,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7317dd881bd93c844b8ef4cf7aa7ace2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontos: 0
   melhorTempoText: {fileID: 349325342}
   pontosText: {fileID: 1953048420}
   InputText: {fileID: 0}
   timerText: {fileID: 1730237033}
-  bestimes: 0
+  pontos: 0
+  bestTime: 9999.99
   tempo: 0
 --- !u!4 &25249588
 Transform:
@@ -283,7 +283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 111, y: -241}
+  m_AnchoredPosition: {x: 108, y: -241}
   m_SizeDelta: {x: 114.6, y: 46.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &349325342

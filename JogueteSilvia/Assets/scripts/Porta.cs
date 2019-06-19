@@ -67,10 +67,10 @@ public class Porta : MonoBehaviour
         PlayerPrefs.SetInt("Pontos", gm.pontos);
         PlayerPrefs.SetFloat("Tempo", gm.tempo);
 
-        if (gm.tempo < gm.bestimes)
+        if (gm.tempo < gm.bestTime)
         {
-            gm.bestimes = gm.tempo;
-            PlayerPrefs.SetFloat("Melhor tempo", gm.bestimes);
+            PlayerPrefs.SetFloat("Melhor tempo", gm.tempo);
         }
     }
+
 }
