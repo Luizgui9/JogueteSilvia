@@ -13,13 +13,20 @@ public class gameMaster : MonoBehaviour
     private bool p1, p2, p3;
     public int pontos;
     private float startTime;
-    public float bestTime = 9999.99f;
+    public float bestTime;
     public float tempo;
     CultureInfo ci = new CultureInfo("en-us");
 
     void Start()
     {
         startTime = Time.time;
+        
+        if(PlayerPrefs.HasKey("Melhor tempo")){
+            bestTime = PlayerPrefs.GetFloat("Melhor tempo");
+        }else{
+            bestTime = 999.99f;
+        }
+
         if (PlayerPrefs.HasKey("Pontos"))
         {
             startTime = Time.time;
@@ -27,10 +34,9 @@ public class gameMaster : MonoBehaviour
             {
                 PlayerPrefs.DeleteKey("Pontos");
                 PlayerPrefs.DeleteKey("Tempo");
-                PlayerPrefs.DeleteKey("Melhor tempo");
                 pontos = 0;
                 tempo = 0.0f;
-                // bestTime = 0.0f;
+
             }
             else
             {
