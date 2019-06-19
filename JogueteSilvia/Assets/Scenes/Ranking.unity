@@ -264,6 +264,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2015024012}
     m_Modifications:
+    - target: {fileID: 8027857071294567088, guid: 769aefbcff136d24aa15413e06a45617,
+        type: 3}
+      propertyPath: m_Name
+      value: HUDElfo
+      objectReference: {fileID: 0}
     - target: {fileID: 8027857071294567091, guid: 769aefbcff136d24aa15413e06a45617,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -334,11 +339,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 76.8
       objectReference: {fileID: 0}
-    - target: {fileID: 8027857071294567088, guid: 769aefbcff136d24aa15413e06a45617,
-        type: 3}
-      propertyPath: m_Name
-      value: HUDElfo
-      objectReference: {fileID: 0}
     - target: {fileID: 8027857071294567090, guid: 769aefbcff136d24aa15413e06a45617,
         type: 3}
       propertyPath: m_Enabled
@@ -359,6 +359,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2015024012}
     m_Modifications:
+    - target: {fileID: 5298248698721602032, guid: 834088cf37ea49b48b44dbd6451763f0,
+        type: 3}
+      propertyPath: m_Name
+      value: HUDVampira
+      objectReference: {fileID: 0}
     - target: {fileID: 5298248698721602033, guid: 834088cf37ea49b48b44dbd6451763f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -428,11 +433,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 76.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5298248698721602032, guid: 834088cf37ea49b48b44dbd6451763f0,
-        type: 3}
-      propertyPath: m_Name
-      value: HUDVampira
       objectReference: {fileID: 0}
     - target: {fileID: 5298248698721602034, guid: 834088cf37ea49b48b44dbd6451763f0,
         type: 3}
@@ -1008,7 +1008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -120.12, y: -49}
+  m_AnchoredPosition: {x: -123, y: -49}
   m_SizeDelta: {x: 57.03, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &850502789
@@ -1537,6 +1537,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2015024012}
     m_Modifications:
+    - target: {fileID: 228783404132691686, guid: 37caa048ea568f14ca9339184f742052,
+        type: 3}
+      propertyPath: m_Name
+      value: HUDOrc
+      objectReference: {fileID: 0}
     - target: {fileID: 228783404132691687, guid: 37caa048ea568f14ca9339184f742052,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1607,11 +1612,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 76.8
       objectReference: {fileID: 0}
-    - target: {fileID: 228783404132691686, guid: 37caa048ea568f14ca9339184f742052,
-        type: 3}
-      propertyPath: m_Name
-      value: HUDOrc
-      objectReference: {fileID: 0}
     - target: {fileID: 228783404132691704, guid: 37caa048ea568f14ca9339184f742052,
         type: 3}
       propertyPath: m_Enabled
@@ -1661,7 +1661,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

@@ -328,7 +328,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 88dd9219401b25044be7ec72a218bea2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.181
   m_Pitch: 0.95
   Loop: 0
   Mute: 0
@@ -786,7 +786,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 822111537}
-        m_MethodName: buttonJogar
+        m_MethodName: buttonIntro
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -844,7 +844,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 822111532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b0ddbe1e9eed945bd57db44fc5b661, type: 3}
+  m_Script: {fileID: 11500000, guid: 538255569f52c8c47a08a09ed6a7e4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1212082476
@@ -1346,9 +1346,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 922d506bf9433c84aa0027e8779eaf05, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.191
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1875,7 +1875,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

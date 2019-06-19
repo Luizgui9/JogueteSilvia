@@ -22,13 +22,27 @@ public class Porta : MonoBehaviour
             gm.InputText.text = ("Aperte [E] para Entrar");
             if (Input.GetKeyDown("e"))
             {
-                if (gm.pontos > 0)
+                if (gm.pontos == 1)
                 {
+                    Debug.Log("Final 1");
                     SalvarPontos();
-                    SceneManager.LoadScene(LevelACarregar);
+                    SceneManager.LoadScene("Final03");
+                }
+                if (gm.pontos == 2)
+                {
+                    Debug.Log("Final 2");
+                    SalvarPontos();
+                    SceneManager.LoadScene("Final02");
+                }
+                if (gm.pontos == 3)
+                {
+                    Debug.Log("Final 3");
+                    SalvarPontos();
+                    SceneManager.LoadScene("Final01");
                 }
                 else
                 {
+                    Debug.Log("Não finalizou");
                     gm.InputText.text = ("Salve pelo menos um personagem para sair!");
                 }
             }
@@ -41,13 +55,27 @@ public class Porta : MonoBehaviour
         {
             if(Input.GetKeyDown("e"))
             {
-                if (gm.pontos > 0)
+                if (gm.pontos == 1)
                 {
+                    Debug.Log("Final 1");
                     SalvarPontos();
-                    SceneManager.LoadScene(LevelACarregar);
+                    SceneManager.LoadScene("Final03");
+                }
+                if (gm.pontos == 2)
+                {
+                    Debug.Log("Final 2");
+                    SalvarPontos();
+                    SceneManager.LoadScene("Final02");
+                }
+                if (gm.pontos == 3)
+                {
+                    Debug.Log("Final 3");
+                    SalvarPontos();
+                    SceneManager.LoadScene("Final01");
                 }
                 else
                 {
+                    Debug.Log("Não finalizou");
                     gm.InputText.text = ("Salve pelo menos um personagem para sair!");
                 }
             }

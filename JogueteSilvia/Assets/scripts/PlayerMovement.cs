@@ -10,6 +10,11 @@ public class PlayerMovement : MonoBehaviour
     private float speed;
     private Porta porta;
     public float speedControl;
+    public GameObject GameOverUI;
+    public AudioSource gameOverAud1;
+    public AudioSource gameOverAudVoice;
+    public AudioSource Musica;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +40,10 @@ public class PlayerMovement : MonoBehaviour
         {
             porta.SalvarPontos();
             Destroy(gameObject);
-            SceneManager.LoadScene(2);
+            GameOverUI.SetActive(true);
+            gameOverAud1.Play();
+            gameOverAudVoice.Play();
+            Destroy(Musica);
         }
     }
 
