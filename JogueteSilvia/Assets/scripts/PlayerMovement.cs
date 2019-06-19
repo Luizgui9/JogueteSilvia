@@ -8,18 +8,19 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     private float speed;
+    private Porta porta;
     public float speedControl;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        porta = GameObject.FindGameObjectWithTag("Gate").GetComponent<Porta>();
     }
 
     
     void Update()
-    {
-        
+    {        
         if(PauseScript.GameIsPaused){
             transform.Translate( 0, 0, 0);
         }
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (outro.gameObject.tag == "monster")
         {
+            porta.SalvarPontos();
             Destroy(gameObject);
             SceneManager.LoadScene(2);
         }

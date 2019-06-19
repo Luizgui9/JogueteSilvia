@@ -150,15 +150,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   melhorTempoText: {fileID: 349325342}
-  pontosText: {fileID: 0}
   InputText: {fileID: 0}
   timerText: {fileID: 1730237033}
+  mediaText: {fileID: 1212161223}
+  medianaText: {fileID: 139756598}
   hudElfo: 0
   hudOrc: 0
   hudVampiro: 0
   pontos: 0
   bestTime: 9999.99
   tempo: 0
+  qntJogadores: 0
   HUDELFO: hudelfo
   HUDVAMPIRO: hudvampira
   HUDORC: hudorc
@@ -188,7 +190,7 @@ GameObject:
   - component: {fileID: 139756599}
   - component: {fileID: 139756598}
   m_Layer: 5
-  m_Name: TimerMedia
+  m_Name: TimerMediana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -262,11 +264,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2015024012}
     m_Modifications:
-    - target: {fileID: 8027857071294567088, guid: 769aefbcff136d24aa15413e06a45617,
-        type: 3}
-      propertyPath: m_Name
-      value: HUDElfo
-      objectReference: {fileID: 0}
     - target: {fileID: 8027857071294567091, guid: 769aefbcff136d24aa15413e06a45617,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -337,6 +334,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 76.8
       objectReference: {fileID: 0}
+    - target: {fileID: 8027857071294567088, guid: 769aefbcff136d24aa15413e06a45617,
+        type: 3}
+      propertyPath: m_Name
+      value: HUDElfo
+      objectReference: {fileID: 0}
     - target: {fileID: 8027857071294567090, guid: 769aefbcff136d24aa15413e06a45617,
         type: 3}
       propertyPath: m_Enabled
@@ -357,11 +359,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2015024012}
     m_Modifications:
-    - target: {fileID: 5298248698721602032, guid: 834088cf37ea49b48b44dbd6451763f0,
-        type: 3}
-      propertyPath: m_Name
-      value: HUDVampira
-      objectReference: {fileID: 0}
     - target: {fileID: 5298248698721602033, guid: 834088cf37ea49b48b44dbd6451763f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -431,6 +428,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 76.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298248698721602032, guid: 834088cf37ea49b48b44dbd6451763f0,
+        type: 3}
+      propertyPath: m_Name
+      value: HUDVampira
       objectReference: {fileID: 0}
     - target: {fileID: 5298248698721602034, guid: 834088cf37ea49b48b44dbd6451763f0,
         type: 3}
@@ -1382,7 +1384,7 @@ GameObject:
   - component: {fileID: 1212161224}
   - component: {fileID: 1212161223}
   m_Layer: 5
-  m_Name: TimerMediana
+  m_Name: TimerMedia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1535,11 +1537,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2015024012}
     m_Modifications:
-    - target: {fileID: 228783404132691686, guid: 37caa048ea568f14ca9339184f742052,
-        type: 3}
-      propertyPath: m_Name
-      value: HUDOrc
-      objectReference: {fileID: 0}
     - target: {fileID: 228783404132691687, guid: 37caa048ea568f14ca9339184f742052,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1609,6 +1606,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 76.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 228783404132691686, guid: 37caa048ea568f14ca9339184f742052,
+        type: 3}
+      propertyPath: m_Name
+      value: HUDOrc
       objectReference: {fileID: 0}
     - target: {fileID: 228783404132691704, guid: 37caa048ea568f14ca9339184f742052,
         type: 3}

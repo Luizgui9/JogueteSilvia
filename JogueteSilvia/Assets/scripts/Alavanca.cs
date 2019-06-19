@@ -44,7 +44,7 @@ public class Alavanca : MonoBehaviour
                 Destroy(Jaula);
                 Destroy(JaulaFundo);
                 Personagem.GetComponent<Cela>().aberta = true;
-                //som de cela abrindo
+                audio.Play();
                 gm.InputText.text = ("Procure pela cela aberta");
             }
         }

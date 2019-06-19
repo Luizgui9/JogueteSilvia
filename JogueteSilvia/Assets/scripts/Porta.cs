@@ -62,10 +62,10 @@ public class Porta : MonoBehaviour
         }
     }
 
-    void SalvarPontos()
+    public void SalvarPontos()
     {
         PlayerPrefs.SetInt("Pontos", gm.pontos);
-        PlayerPrefs.SetFloat("Tempo", gm.tempo);
+        PlayerPrefs.SetFloat("Tempo"+gm.qntJogadores, gm.tempo);
 
         if (gm.tempo < gm.bestTime)
         {

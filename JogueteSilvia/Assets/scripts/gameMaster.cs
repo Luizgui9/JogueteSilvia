@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 public class gameMaster : MonoBehaviour
 {
     public static gameMaster instancia;
-    public Text melhorTempoText;
-    public Text InputText;
-    public Text timerText;
+    public Text melhorTempoText, InputText, timerText, mediaText, medianaText;
     public int hudElfo, hudOrc, hudVampiro;
     public int pontos;
     private float startTime;
     public float bestTime;
     public float tempo;
     CultureInfo ci = new CultureInfo("en-us");
+
+    public int qntJogadores;
 
     private GameObject HUD1, HUD2, HUD3;
 
@@ -30,13 +30,14 @@ public class gameMaster : MonoBehaviour
             bestTime = 999.99f;
         }
 
+        
+
         if (PlayerPrefs.HasKey("Pontos"))
         {
             startTime = Time.time;
             if (SceneManager.GetActiveScene().buildIndex == 1)
             {
                 PlayerPrefs.DeleteKey("Pontos");
-                PlayerPrefs.DeleteKey("Tempo");
                 PlayerPrefs.DeleteKey("Elfo");
                 PlayerPrefs.DeleteKey("Orc");
                 PlayerPrefs.DeleteKey("Vampiro");
@@ -46,11 +47,19 @@ public class gameMaster : MonoBehaviour
                 hudOrc = 0;
                 hudVampiro = 0;
 
+                if (PlayerPrefs.HasKey("qntJogadores"))
+                {
+                    qntJogadores = PlayerPrefs.GetInt("qntJogadores") + 1;
+                }
+                else
+                {
+                    PlayerPrefs.SetInt("qntJogadores", 0);                    
+                }
             }
             else
             {
                 pontos = PlayerPrefs.GetInt("Pontos");
-                tempo = PlayerPrefs.GetFloat("Tempo");
+                tempo = PlayerPrefs.GetFloat("Tempo"+qntJogadores);
                 bestTime = PlayerPrefs.GetFloat("Melhor tempo");
                 hudElfo = PlayerPrefs.GetInt("Elfo");
                 hudOrc = PlayerPrefs.GetInt("Orc");
@@ -78,8 +87,28 @@ public class gameMaster : MonoBehaviour
                         HUD3.GetComponent<SpriteRenderer>().enabled = true;
                     }
                 }
-                timerText.text = converteTempo(PlayerPrefs.GetFloat("Tempo"));
+                timerText.text = converteTempo(PlayerPrefs.GetFloat("Tempo"+qntJogadores));
                 melhorTempoText.text = converteTempo(PlayerPrefs.GetFloat("Melhor tempo"));
+                float tempoTotal = 0, mediana = 0;
+                for (int i = 0; i <= qntJogadores; i++)
+                {
+                    tempoTotal += PlayerPrefs.GetFloat("Tempo"+i);
+                    if ((qntJogadores+1) % 2 == 0)
+                    {
+                        if (i == (qntJogadores + 1) / 2)
+                            mediana = PlayerPrefs.GetFloat("Tempo" + i);
+                        if (i == ((qntJogadores + 1) / 2) + 1)
+                            mediana = (mediana + PlayerPrefs.GetFloat("Tempo" + i)) / 2;
+                    }
+                    else
+                    {
+                        if (i == (qntJogadores) / 2)
+                            mediana = PlayerPrefs.GetFloat("Tempo" + i);
+                    }
+                }
+                mediaText.text = converteTempo((tempoTotal/(float)qntJogadores));
+                
+                medianaText.text = converteTempo(mediana);
             }
         }
         else
