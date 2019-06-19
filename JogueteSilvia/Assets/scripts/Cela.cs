@@ -31,6 +31,7 @@ public class Cela : MonoBehaviour
                 {
                     HUD.GetComponent<SpriteRenderer>().enabled = true;
                     gm.pontos += 1;
+                    SalvaHud();
                     Destroy(this.gameObject);
                     //adicionar score e personagem ao HUD
                 }
@@ -50,6 +51,7 @@ public class Cela : MonoBehaviour
             {
                 HUD.GetComponent<SpriteRenderer>().enabled = true;
                 gm.pontos += 1;
+                SalvaHud();
                 Destroy(this.gameObject);
                 //adicionar score e personagem ao HUD
             }
@@ -61,6 +63,21 @@ public class Cela : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             gm.InputText.text = (" ");
+        }
+    }
+
+    void SalvaHud(){
+        if(nomeHUD == "hudelfo" && HUD.GetComponent<SpriteRenderer>().enabled == true){
+            gm.hudElfo = 1;
+            PlayerPrefs.SetInt("Elfo", gm.hudElfo);
+        }
+        if(nomeHUD == "hudorc" && HUD.GetComponent<SpriteRenderer>().enabled == true){
+            gm.hudOrc = 1;
+            PlayerPrefs.SetInt("Orc", gm.hudOrc);
+        }
+        if(nomeHUD == "hudvampira" && HUD.GetComponent<SpriteRenderer>().enabled == true){
+            gm.hudVampiro = 1;
+            PlayerPrefs.SetInt("Vampiro", gm.hudVampiro);
         }
     }
 }
