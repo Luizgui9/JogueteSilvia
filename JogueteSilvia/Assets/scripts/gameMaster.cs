@@ -55,8 +55,6 @@ public class gameMaster : MonoBehaviour
             PlayerPrefsX.SetFloatArray("Tempos", tempos);
         }
 
-        if (PlayerPrefs.HasKey("Tempo"))
-        {
             startTime = Time.time;
             if (SceneManager.GetActiveScene().buildIndex == 1)
             {
@@ -137,16 +135,7 @@ public class gameMaster : MonoBehaviour
                     mediaText.text = converteTempo((tempoTotal/(float)qntJogadores));
                 if (medianaText != null)
                     medianaText.text = converteTempo(mediana);
-            }
-        }
-        else
-        {
-            // pontosText.text = " ";
-            if (timerText != null)
-                timerText.text = " ";
-            if (melhorTempoText != null)
-                melhorTempoText.text = " ";
-        }
+            }        
     }
 
     void Update()

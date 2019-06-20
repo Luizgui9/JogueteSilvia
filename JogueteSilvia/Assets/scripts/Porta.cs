@@ -98,6 +98,7 @@ public class Porta : MonoBehaviour
         PlayerPrefs.SetFloat("Tempo", gm.tempo);
         tempos2 = gm.getTempos();
         Debug.Log(tempos2.Length);
+        Debug.Log(gm.getQntJogadores());
         tempos2[gm.getQntJogadores() - 1] = gm.tempo;
         Debug.Log(tempos2[gm.getQntJogadores() - 1]);
         PlayerPrefsX.SetFloatArray("Tempos", tempos2);
