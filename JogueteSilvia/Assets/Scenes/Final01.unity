@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Voltar ao menu
+  m_Text: Voltar ao ranking
 --- !u!222 &643189536
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1076169599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33457f819f133cd40abee93ae602f48e, type: 3}
+  m_Script: {fileID: 11500000, guid: 59b58accb89c81f4f9dd3216d63da9b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1076169602
@@ -460,7 +460,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1076169601}
-        m_MethodName: buttonIrMainMenu
+        m_MethodName: buttonIrRanking
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -50,7 +50,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/NovoUsuario.unity
     guid: a8746c6a5c56db348a4dabf03ad64a57
   m_configObjects: {}
