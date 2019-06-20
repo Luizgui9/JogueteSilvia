@@ -10,6 +10,8 @@ public class Porta : MonoBehaviour
 
     private gameMaster gm;
 
+    private float[] tempos2;
+
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<gameMaster>();
@@ -93,7 +95,12 @@ public class Porta : MonoBehaviour
     public void SalvarPontos()
     {
         PlayerPrefs.SetInt("Pontos", gm.pontos);
-        PlayerPrefs.SetFloat("Tempo"+gm.qntJogadores, gm.tempo);
+        PlayerPrefs.SetFloat("Tempo", gm.tempo);
+        tempos2 = gm.getTempos();
+        Debug.Log(tempos2.Length);
+        tempos2[gm.getQntJogadores() - 1] = gm.tempo;
+        Debug.Log(tempos2[gm.getQntJogadores() - 1]);
+        PlayerPrefsX.SetFloatArray("Tempos", tempos2);
 
         if (gm.tempo < gm.bestTime)
         {

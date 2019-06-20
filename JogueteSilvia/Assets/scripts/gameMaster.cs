@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static PlayerPrefsX;
 
 public class gameMaster : MonoBehaviour
 {
@@ -12,27 +13,49 @@ public class gameMaster : MonoBehaviour
     private float startTime;
     public float bestTime;
     public float tempo;
+    private float[] tempos = new float[20];
+    float tempoTotal = 0, mediana = 0;
     CultureInfo ci = new CultureInfo("en-us");
 
-    public int qntJogadores;
+    private int qntJogadores;
+
+    public float[] getTempos()
+    {
+        return tempos;
+    }
+
+    public int getQntJogadores()
+    {
+        return qntJogadores;
+    }
 
     private GameObject HUD1, HUD2, HUD3;
 
     public string HUDELFO, HUDVAMPIRO, HUDORC;
-
+    
     void Start()
     {
         startTime = Time.time;
         
-        if(PlayerPrefs.HasKey("Melhor tempo")){
+        if (PlayerPrefs.HasKey("Melhor tempo"))
+        {
             bestTime = PlayerPrefs.GetFloat("Melhor tempo");
-        }else{
+        }
+        else
+        {
             bestTime = 999.99f;
         }
 
-        
+        if (PlayerPrefs.HasKey("Tempos"))
+        {
+            tempos = PlayerPrefsX.GetFloatArray("Tempos");
+        }
+        else
+        {
+            PlayerPrefsX.SetFloatArray("Tempos", tempos);
+        }
 
-        if (PlayerPrefs.HasKey("Pontos"))
+        if (PlayerPrefs.HasKey("Tempo"))
         {
             startTime = Time.time;
             if (SceneManager.GetActiveScene().buildIndex == 1)
@@ -46,25 +69,27 @@ public class gameMaster : MonoBehaviour
                 hudElfo = 0;
                 hudOrc = 0;
                 hudVampiro = 0;
-
                 if (PlayerPrefs.HasKey("qntJogadores"))
                 {
                     qntJogadores = PlayerPrefs.GetInt("qntJogadores") + 1;
+                    PlayerPrefs.SetInt("qntJogadores", qntJogadores);
                 }
                 else
                 {
-                    PlayerPrefs.SetInt("qntJogadores", 0);                    
+                    PlayerPrefs.SetInt("qntJogadores", 1);
+                    qntJogadores = 1;
                 }
             }
             else
             {
                 pontos = PlayerPrefs.GetInt("Pontos");
-                tempo = PlayerPrefs.GetFloat("Tempo"+qntJogadores);
+                tempo = PlayerPrefs.GetFloat("Tempo");
+                tempos = PlayerPrefsX.GetFloatArray("Tempos");
                 bestTime = PlayerPrefs.GetFloat("Melhor tempo");
                 hudElfo = PlayerPrefs.GetInt("Elfo");
                 hudOrc = PlayerPrefs.GetInt("Orc");
                 hudVampiro = PlayerPrefs.GetInt("Vampiro");
-
+                qntJogadores = PlayerPrefs.GetInt("qntJogadores");
             }
 
             if (SceneManager.GetActiveScene().buildIndex == 2)
@@ -87,35 +112,40 @@ public class gameMaster : MonoBehaviour
                         HUD3.GetComponent<SpriteRenderer>().enabled = true;
                     }
                 }
-                timerText.text = converteTempo(PlayerPrefs.GetFloat("Tempo"+qntJogadores));
-                melhorTempoText.text = converteTempo(PlayerPrefs.GetFloat("Melhor tempo"));
-                float tempoTotal = 0, mediana = 0;
-                for (int i = 0; i <= qntJogadores; i++)
+                if (timerText != null)
+                    timerText.text = converteTempo(PlayerPrefs.GetFloat("Tempo"));
+                if (melhorTempoText != null)
+                    melhorTempoText.text = converteTempo(PlayerPrefs.GetFloat("Melhor tempo"));
+
+                for (int i = 0; i < qntJogadores; i++)
                 {
-                    tempoTotal += PlayerPrefs.GetFloat("Tempo"+i);
-                    if ((qntJogadores+1) % 2 == 0)
+                    tempoTotal += tempos[i];
+                    if ((qntJogadores) % 2 == 0)
                     {
-                        if (i == (qntJogadores + 1) / 2)
-                            mediana = PlayerPrefs.GetFloat("Tempo" + i);
-                        if (i == ((qntJogadores + 1) / 2) + 1)
-                            mediana = (mediana + PlayerPrefs.GetFloat("Tempo" + i)) / 2;
+                        if (i == (qntJogadores) / 2)
+                            mediana = tempos[i];
+                        if (i == ((qntJogadores) / 2) + 1)
+                            mediana = (mediana + tempos[i]) / 2;
                     }
                     else
                     {
-                        if (i == (qntJogadores) / 2)
-                            mediana = PlayerPrefs.GetFloat("Tempo" + i);
+                        if (i == (qntJogadores + 1) / 2)
+                            mediana = tempos[i];
                     }
                 }
-                mediaText.text = converteTempo((tempoTotal/(float)qntJogadores));
-                
-                medianaText.text = converteTempo(mediana);
+                if (mediaText != null)
+                    mediaText.text = converteTempo((tempoTotal/(float)qntJogadores));
+                if (medianaText != null)
+                    medianaText.text = converteTempo(mediana);
             }
         }
         else
         {
             // pontosText.text = " ";
-            timerText.text = " ";
-            melhorTempoText.text = " ";
+            if (timerText != null)
+                timerText.text = " ";
+            if (melhorTempoText != null)
+                melhorTempoText.text = " ";
         }
     }
 
@@ -129,6 +159,7 @@ public class gameMaster : MonoBehaviour
             timerText.text = converteTempo(t);
         }
     }
+
     string converteTempo(float time){
             string minutes = ((int)time / 60).ToString();
             string seconds = (time % 60).ToString("f2", ci);

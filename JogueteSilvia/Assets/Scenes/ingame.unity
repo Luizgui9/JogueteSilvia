@@ -29357,6 +29357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1988851116}
   - component: {fileID: 1988851115}
+  - component: {fileID: 1988851117}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: GameMaster
@@ -29387,6 +29388,7 @@ MonoBehaviour:
   pontos: 0
   bestTime: 0
   tempo: 0
+  tempos: []
   qntJogadores: 0
   HUDELFO: 
   HUDVAMPIRO: 
@@ -29405,6 +29407,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1988851117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988851114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f73cf50734409eb48be0ae8f929784ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2031979695 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8079576858665390244, guid: 7451705fcadcc9c45a18a9cf409b8f01,
@@ -30057,11 +30071,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 215091559}
     m_Modifications:
-    - target: {fileID: 228783404132691686, guid: 37caa048ea568f14ca9339184f742052,
-        type: 3}
-      propertyPath: m_Name
-      value: HUDOrc
-      objectReference: {fileID: 0}
     - target: {fileID: 228783404132691687, guid: 37caa048ea568f14ca9339184f742052,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30117,6 +30126,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 228783404132691686, guid: 37caa048ea568f14ca9339184f742052,
+        type: 3}
+      propertyPath: m_Name
+      value: HUDOrc
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37caa048ea568f14ca9339184f742052, type: 3}
 --- !u!1001 &5298248698875914568
@@ -30126,11 +30140,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 215091559}
     m_Modifications:
-    - target: {fileID: 5298248698721602032, guid: 834088cf37ea49b48b44dbd6451763f0,
-        type: 3}
-      propertyPath: m_Name
-      value: HUDVampira
-      objectReference: {fileID: 0}
     - target: {fileID: 5298248698721602033, guid: 834088cf37ea49b48b44dbd6451763f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30186,6 +30195,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5298248698721602032, guid: 834088cf37ea49b48b44dbd6451763f0,
+        type: 3}
+      propertyPath: m_Name
+      value: HUDVampira
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 834088cf37ea49b48b44dbd6451763f0, type: 3}
 --- !u!1001 &8027857071569767509
@@ -30195,11 +30209,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 215091559}
     m_Modifications:
-    - target: {fileID: 8027857071294567088, guid: 769aefbcff136d24aa15413e06a45617,
-        type: 3}
-      propertyPath: m_Name
-      value: HUDElfo
-      objectReference: {fileID: 0}
     - target: {fileID: 8027857071294567091, guid: 769aefbcff136d24aa15413e06a45617,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30254,6 +30263,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027857071294567088, guid: 769aefbcff136d24aa15413e06a45617,
+        type: 3}
+      propertyPath: m_Name
+      value: HUDElfo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 769aefbcff136d24aa15413e06a45617, type: 3}

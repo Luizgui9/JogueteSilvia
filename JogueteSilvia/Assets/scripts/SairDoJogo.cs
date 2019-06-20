@@ -7,5 +7,6 @@ public class SairDoJogo : MonoBehaviour
     public void ExitGame(){
         Application.Quit();
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteKey("Tempos");
     }
 }
